@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      author: Anastasiya
+      id: DEV-1
+      changes:
+        - sqlFile:
+            path: scripts/init/001_create_schema_message.sql
+            relativeToChangelogFile: true
+        - sqlFile:
+            path: scripts/init/002_ddl_create_message_table.sql
+            relativeToChangelogFile: true
