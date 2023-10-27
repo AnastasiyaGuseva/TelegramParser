@@ -1,11 +1,7 @@
 package com.example.telegramparser.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.BatchSize;
 
 @Entity
 @Getter
@@ -13,15 +9,20 @@ import org.hibernate.annotations.BatchSize;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name = "message")
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
+    @Column(name="type")
     private String type;
+    @Column(name="date")
     private Integer date;
+    @Column(name="edited")
     private Integer edited;
-    private String from;
+    @Column(name="from_id")
     private Long fromId;
+    @Column(name="text")
     private String text;
 }

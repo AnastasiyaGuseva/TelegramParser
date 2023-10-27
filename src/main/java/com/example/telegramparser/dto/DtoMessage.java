@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DtoMessage {
-    Integer id;
+    Long id;
     String type;
     Integer date;
     Integer edited;

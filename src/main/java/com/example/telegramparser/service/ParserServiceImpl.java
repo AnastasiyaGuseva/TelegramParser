@@ -12,8 +12,10 @@ import java.util.List;
 public class ParserServiceImpl implements ParserService {
     private final MessageRepository messageRepository;
 
+
     public ParserServiceImpl(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;
+
     }
 
     @Transactional
@@ -26,11 +28,10 @@ public class ParserServiceImpl implements ParserService {
 
     @Override
     public void saveMessage(Message message) {
-        List<Message>messages=new ArrayList<>();
-
-        for (int i = 0; i < 100; i++) {
-            messages.add(message);
-        }
         messageRepository.save(message);
+
     }
+
 }
+
+
